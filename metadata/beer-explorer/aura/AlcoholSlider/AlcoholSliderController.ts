@@ -1,4 +1,4 @@
-({
+<{[s: string]: (component, event)=>any}>({
 	changeHandler : function(component, event) {
         var myEvent = $A.get("e.cc02:AlcoholSelectionChange");
         myEvent.setParams({ "minAlcohol": event.target.value});

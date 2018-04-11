@@ -1,0 +1,24 @@
+{
+    "name": "belgian-beer-explorer-lightning",
+    "version": "1.0.0",
+    "description": "typescript port of belgian-beer-explorer-lightning",
+    "main": "index.js",
+    "scripts": {
+        "cp-non-ts": "rm -rf ./dist & copyfiles \"metadata/**/*\" -e \"metadata/**/*.ts\" dist/",
+        "build": "npm run cp-non-ts & tsc",
+        "deploy": "sfdx force:mdapi:deploy -d ./dist/metadata/beer-explorer -u charlie@callawaycloudconsulting.com -w 3000"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ccoenraets/belgian-beer-explorer-lightning.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ccoenraets/belgian-beer-explorer-lightning/issues"
+    },
+    "homepage": "https://github.com/ccoenraets/belgian-beer-explorer-lightning#readme",
+    "devDependencies": {
+        "copyfiles": "^2.0.0"
+    }
+}
