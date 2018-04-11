@@ -1,12 +1,17 @@
+interface BeerListHelper{
+    minAlcohol: number;
+    getBeers: (component: Component, page?: number) => any
+}
+
 ({
     minAlcohol: 0,
-	getBeers : function(component, page) {
+	getBeers : function(component: Component, page) {
         var searchKey = window.location.hash.substr(1);
         page = page || 1;
-        var action = component.get("c.findAll");
+        var action = component.get<any>("c.findAll");
 		action.setParams({
       		"searchKey": searchKey,
-            "minAlcohol": this.minAlcohol, 
+            "minAlcohol": this.minAlcohol,
             "pageNumber": page
     	});
     	action.setCallback(this, function(a) {
